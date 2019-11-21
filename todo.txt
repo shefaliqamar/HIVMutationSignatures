@@ -1,0 +1,7 @@
+
+Scripts we need to write:
+- Comparison script between 2 files, using random choice for uncertainties
+
+
+Decisions we need to make:
+- Throw out nucleotides w/uncertainty or choose randomly or less value
