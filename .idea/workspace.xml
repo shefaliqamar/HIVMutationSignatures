@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f1314e4-cf04-45ef-8a30-fee091e1a1f0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/HIVSigs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HIVSigs.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hiv_longitudinal/all_time0_linsi.fasta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.csv" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,19 +16,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/HIVSigs.py">
+        <entry file="file://$PROJECT_DIR$/hiv_longitudinal/AlignedSequences/HIVSigs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/out.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="35311" column="29" lean-forward="true" selection-start-line="35311" selection-start-column="29" selection-end-line="35311" selection-end-column="29" />
+            <state relative-caret-position="375">
+              <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -46,6 +40,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/HIVSigs.py" />
+        <option value="$PROJECT_DIR$/hiv_longitudinal/AlignedSequences/HIVSigs.py" />
       </list>
     </option>
   </component>
@@ -66,6 +61,17 @@
             <path>
               <item name="HIVMutationSignatures" type="b2602c69:ProjectViewProjectNode" />
               <item name="HIVMutationSignatures" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HIVMutationSignatures" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HIVMutationSignatures" type="462c0819:PsiDirectoryNode" />
+              <item name="hiv_longitudinal" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HIVMutationSignatures" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HIVMutationSignatures" type="462c0819:PsiDirectoryNode" />
+              <item name="hiv_longitudinal" type="462c0819:PsiDirectoryNode" />
+              <item name="AlignedSequences" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -127,16 +133,19 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/out.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="35311" column="29" lean-forward="true" selection-start-line="35311" selection-start-column="29" selection-end-line="35311" selection-end-column="29" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/HIVSigs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+        <state relative-caret-position="345">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hiv_longitudinal/AlignedSequences/HIVSigs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
         </state>
       </provider>
     </entry>
