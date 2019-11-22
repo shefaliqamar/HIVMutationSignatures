@@ -48,9 +48,12 @@ for (dirpath, dirnames, filenames) in os.walk(path):
                                     endIndex = len(testline)
                                 else:
                                     endIndex = j + 1
-                                context = testline[startIndex:endIndex]
+                                context = testline[startIndex:endIndex+1]
                                 mut = ref + test
-                                mutations[mut][context] = mutations[mut][context] + 1
+                                if not mutations[mut].__contains__(context):
+                                    mutations[mut][context] = 1
+                                else:
+                                    mutations[mut][context] = mutations[mut][context] + 1
                                 print(mutations)
 
 
