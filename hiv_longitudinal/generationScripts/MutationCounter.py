@@ -4,7 +4,7 @@ import csv
 import itertools
 
 
-# next step: run on all files w/ refernce genome
+# Used to generate frequency CSVs based on reference-based comparisons
 
 def generate_frequencies():
     # -- = insert study reference
