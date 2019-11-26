@@ -5,6 +5,7 @@ import itertools
 
 
 # Used to generate frequency CSVs based on reference-based comparisons!!
+# Used same reference for all studies -- may want to split by study for git file cap
 
 def generate_frequencies():
     # -- = insert study reference
