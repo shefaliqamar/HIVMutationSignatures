@@ -4,7 +4,7 @@ import csv
 import itertools
 
 
-# Used to generate frequency CSVs based on reference-based comparisons
+# Used to generate frequency CSVs based on reference-based comparisons!
 
 def generate_frequencies():
     # -- = insert study reference
