@@ -2,6 +2,8 @@ import os
 import random
 import csv
 import itertools
+from tempfile import NamedTemporaryFile
+import shutil
 
 
 # Used to generate frequency CSVs based on reference-based comparisons!!
@@ -12,21 +14,8 @@ def generate_frequencies():
     study = "968"
     referenceGenome = open('/Users/macbook/Desktop/Proj6/HIVMutationSignatures/hiv_longitudinal/AlignedSequences/1142_21423_13_10_1986_A_1986_0__None.txt', 'r')
 
-    mutations = {}
-    mutations["ag"] = {}
-    mutations["ac"] = {}
-    mutations["at"] = {}
-    mutations["ta"] = {}
-    mutations["tc"] = {}
-    mutations["tg"] = {}
-    mutations["ca"] = {}
-    mutations["ct"] = {}
-    mutations["cg"] = {}
-    mutations["ga"] = {}
-    mutations["gc"] = {}
-    mutations["gt"] = {}
-
     path = '/Users/macbook/Desktop/Proj6/HIVMutationSignatures/hiv_longitudinal/AlignedSequences/'
+    outputFile = open("MutationFrequencies.csv", "w")
 
     # convert genome to single string
     referenceSequence = ""
@@ -34,11 +23,31 @@ def generate_frequencies():
         for line in reference_file.readlines():
             referenceSequence += line.split("\n")[0]
 
+    foundContexts = []
+
+    firstPatient = True
     for (dirpath, dirnames, filenames) in os.walk(path):
+        patientnum = 0
         for filename in filenames:
-            if str(filename).endswith(".txt"):
+            if str(filename).endswith(".txt"):  # and str(filename).startswith(study):
                 with open(path + filename, 'r') as test_file:
                     print("opening file", filename)
+                    patientnum += 1
+
+                    mutations = {}
+                    mutations["A>G"] = {}
+                    mutations["A>C"] = {}
+                    mutations["A>T"] = {}
+                    mutations["T>A"] = {}
+                    mutations["T>C"] = {}
+                    mutations["T>G"] = {}
+                    mutations["C>A"] = {}
+                    mutations["C>T"] = {}
+                    mutations["C>G"] = {}
+                    mutations["G>A"] = {}
+                    mutations["G>C"] = {}
+                    mutations["G>T"] = {}
+
                     testSequence = ""
                     for line in test_file.readlines():
                         testSequence += line.split("\n")[0]
@@ -53,27 +62,62 @@ def generate_frequencies():
                                 print("Mutation at nucleotide " + str(i) + " between: " + ref + " and: " + test)
                                 context = ""
                                 if i - 1 < 0:
-                                    context = "-" + test + testSequence[i+1]
-                                    print("Found a starting mutation!")
-                                if i + 1 >= len(testSequence):
-                                    context = testSequence[i-1] + test + "-"
-                                    print("Found an ending mutation!")
+                                    context = "-" + ref + referenceSequence[i+1]
+                                    # print("Found a starting mutation!")
+                                if i + 1 >= len(referenceSequence):
+                                    context = referenceSequence[i-1] + ref + "-"
+                                    # print("Found an ending mutation!")
                                 else:
-                                    context = testSequence[i-1] + test + testSequence[i+1]
-                                print("Context " + context + "of mutation at i = " + str(i))
-                                mut = ref + test
-                                if not mutations.__contains__(mut):
-                                    mutations[mut] = {}
+                                    context = referenceSequence[i-1] + ref + referenceSequence[i+1]
+                                print("Context " + context.upper() + "of mutation at i = " + str(i))
+                                mut = ref + ">" + test
+                                mut = mut.upper()
+                                context = context.upper()
                                 if not mutations[mut].__contains__(context):
                                     mutations[mut][context] = 1
                                 else:
                                     mutations[mut][context] = mutations[mut][context] + 1
                 print("Mutations for file" + filename + " : " + str(mutations))
-                with open(filename + "Frequencies.csv", "w") as f:
-                    w = csv.writer(f)
-                    for key in mutations.keys():
-                        for context in mutations[key].keys():
-                            w.writerow([key] + [context] + [mutations[key][context]])
+                if firstPatient is True:
+                    with open("MutationFrequencies.csv", "w") as f:
+                        w = csv.writer(f)
+                        w.writerow(["Mutation Type"] + ["Trinucleotide"] + ["Sample " + str(patientnum)])
+                        for key in mutations.keys():
+                            for context in mutations[key].keys():
+                                w.writerow([key] + [context] + [mutations[key][context]])
+                                foundContexts.append([key, context])
+                    firstPatient = False
+                else:  # move on to new column for next patient
+                    filename = "MutationFrequencies.csv"
+                    print("Looking at patient number " + str(patientnum))
+                    # now populate data
+                    with open(filename) as csvFile:
+                        with open("dummyfile.csv", "w") as tempfile:
+                            # the following executes for every extracted mutation-context frequency
+                            # found from this patient
+                            csv_reader = csv.reader(csvFile, delimiter=',')
+                            csv_writer = csv.writer(tempfile)
+                            line_count = 0
+                            # Go over already found contexts
+                            for row in csv_reader:
+                                line_count += 1
+                                if line_count == 1:
+                                    csv_writer.writerow(row + ["Sample " + str(patientnum)])
+                                    continue
+                                if mutations[row[0]].__contains__(row[1]):
+                                    csv_writer.writerow(row + [mutations[row[0]][row[1]]])
+                                    foundContexts.append([row[0], row[1]])
+                                else:
+                                    csv_writer.writerow(row + [0])
+
+                            for key in mutations.keys():
+                                for context in mutations[key].keys():
+                                    if not foundContexts.__contains__([key, context]):
+                                        row = [key] + [context]
+                                        for i in range(patientnum):
+                                            row += [0]
+                                        csv_writer.writerow(row + [mutations[key][context]])
+                    shutil.move(tempfile.name, filename)
 
 
 def randpicker(letter):
