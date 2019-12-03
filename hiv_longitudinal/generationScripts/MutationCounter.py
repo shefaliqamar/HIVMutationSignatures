@@ -81,7 +81,7 @@ def generate_frequencies():
                 if firstPatient is True:
                     with open("MutationFrequencies.csv", "w") as f:
                         w = csv.writer(f)
-                        w.writerow(["Mutation Type"] + ["Trinucleotide"] + ["Sample " + str(patientnum)])
+                        w.writerow(["Mutation Type"] + ["Trinucleotide"] + ["Sample" + str(patientnum)])
                         for key in mutations.keys():
                             for context in mutations[key].keys():
                                 w.writerow([key] + [context] + [mutations[key][context]])
@@ -102,7 +102,7 @@ def generate_frequencies():
                             for row in csv_reader:
                                 line_count += 1
                                 if line_count == 1:
-                                    csv_writer.writerow(row + ["Sample " + str(patientnum)])
+                                    csv_writer.writerow(row + ["Sample" + str(patientnum)])
                                     continue
                                 if mutations[row[0]].__contains__(row[1]):
                                     csv_writer.writerow(row + [mutations[row[0]][row[1]]])
@@ -114,7 +114,7 @@ def generate_frequencies():
                                 for context in mutations[key].keys():
                                     if not foundContexts.__contains__([key, context]):
                                         row = [key] + [context]
-                                        for i in range(patientnum):
+                                        for i in range(patientnum - 1):
                                             row += [0]
                                         csv_writer.writerow(row + [mutations[key][context]])
                     shutil.move(tempfile.name, filename)
