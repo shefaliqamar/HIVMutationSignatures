@@ -11,7 +11,7 @@ import shutil
 
 def generate_frequencies():
     # -- = insert study reference
-    study = "2031"
+    study = "67_"
 #     /Users/macbook/Desktop/Proj6/HIVMutationSignatures/hiv_longitudinal
     referenceGenome = open('/home/asif/shefu_projects/HIVMutationSignatures/hiv_longitudinal/AlignedSequences/1142_21423_13_10_1986_A_1986_0__None.txt', 'r')
 
