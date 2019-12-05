@@ -12,9 +12,10 @@ import shutil
 def generate_frequencies():
     # -- = insert study reference
     study = "968"
-    referenceGenome = open('/Users/macbook/Desktop/Proj6/HIVMutationSignatures/hiv_longitudinal/AlignedSequences/1142_21423_13_10_1986_A_1986_0__None.txt', 'r')
+#     /Users/macbook/Desktop/Proj6/HIVMutationSignatures/hiv_longitudinal
+    referenceGenome = open('/home/asif/shefu_projects/HIVMutationSignatures/hiv_longitudinal/AlignedSequences/1142_21423_13_10_1986_A_1986_0__None.txt', 'r')
 
-    path = '/Users/macbook/Desktop/Proj6/HIVMutationSignatures/hiv_longitudinal/AlignedSequences/'
+    path = '    /home/asif/shefu_projects/HIVMutationSignatures/hiv_longitudinal//AlignedSequences/'
     outputFile = open("MutationFrequencies2.csv", "w")
 
     # convert genome to single string
