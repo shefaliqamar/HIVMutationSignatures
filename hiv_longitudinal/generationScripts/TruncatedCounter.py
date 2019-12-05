@@ -33,8 +33,8 @@ def generate_frequencies():
             if str(filename).endswith(".txt"):  # and str(filename).startswith(study):
                 with open(path + filename, 'r') as test_file:
                     print("opening file", filename)
-#                     if patientnum >= 20:
-#                         return
+                    if patientnum >= 45:
+                        return
                     patientnum += 1
 
                     mutations = {}
