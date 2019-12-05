@@ -11,7 +11,7 @@ import shutil
 
 def generate_frequencies():
     # -- = insert study reference
-    study = "968"
+    study = "2031"
 #     /Users/macbook/Desktop/Proj6/HIVMutationSignatures/hiv_longitudinal
     referenceGenome = open('/home/asif/shefu_projects/HIVMutationSignatures/hiv_longitudinal/AlignedSequences/1142_21423_13_10_1986_A_1986_0__None.txt', 'r')
 
@@ -30,7 +30,7 @@ def generate_frequencies():
     for (dirpath, dirnames, filenames) in os.walk(path):
         patientnum = 0
         for filename in filenames:
-            if str(filename).endswith(".txt"):  # and str(filename).startswith(study):
+            if str(filename).endswith(".txt") and str(filename).startswith(study):
                 with open(path + filename, 'r') as test_file:
                     print("opening file", filename)
                     if patientnum >= 45:
