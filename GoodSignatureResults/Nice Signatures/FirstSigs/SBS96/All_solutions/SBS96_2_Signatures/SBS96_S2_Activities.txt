@@ -1,0 +1,14 @@
+Samples	Signature A	Signature B
+Sample1	21	5
+Sample2	19	8
+Sample3	10	15
+Sample4	24	4
+Sample5	20	7
+Sample6	10	15
+Sample7	22	5
+Sample8	18	10
+Sample9	17	9
+Sample10	22	9
+Sample11	15	8
+Sample12	14	13
+Sample13	19	9

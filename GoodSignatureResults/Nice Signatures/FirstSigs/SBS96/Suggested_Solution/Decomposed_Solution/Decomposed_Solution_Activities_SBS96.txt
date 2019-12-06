@@ -1,0 +1,14 @@
+Samples	SBS1	SBS5	Signature A
+Sample1	0	0	26
+Sample2	0	0	27
+Sample3	0	0	25
+Sample4	0	0	28
+Sample5	0	0	27
+Sample6	0	0	25
+Sample7	0	0	27
+Sample8	0	0	28
+Sample9	0	0	26
+Sample10	0	0	31
+Sample11	0	0	23
+Sample12	0	0	27
+Sample13	0	0	28

@@ -1,0 +1,14 @@
+Samples	Signature A	Signature B	Signature C	Signature D
+Sample1	11	5	0	10
+Sample2	7	7	4	9
+Sample3	1	15	9	0
+Sample4	10	9	8	1
+Sample5	9	4	4	10
+Sample6	9	5	9	2
+Sample7	4	5	4	14
+Sample8	10	4	9	5
+Sample9	9	7	6	4
+Sample10	11	10	9	1
+Sample11	12	3	3	5
+Sample12	10	5	3	9
+Sample13	9	2	12	5

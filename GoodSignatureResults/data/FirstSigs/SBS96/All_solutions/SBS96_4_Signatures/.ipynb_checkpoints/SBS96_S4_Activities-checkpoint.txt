@@ -1,0 +1,10 @@
+Samples	Signature A	Signature B	Signature C	Signature D
+Sample1	2097	5781	18211	894
+Sample2	183	2554	105	179
+Sample3	7560	2612	676	1664
+Sample4	368	4630	538	20
+Sample5	914	4164	3523	213
+Sample6	13023	2948	722	0
+Sample7	2682	5566	1228	0
+Sample8	416	1254	119	11404
+Sample9	6810	3932	6154	0

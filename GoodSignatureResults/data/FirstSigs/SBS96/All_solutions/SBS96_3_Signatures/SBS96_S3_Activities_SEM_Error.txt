@@ -1,0 +1,10 @@
+Samples	Signature A	Signature B	Signature C
+Sample1	9.18E+01	1.91E+01	9.44E+01
+Sample2	7.55E+00	5.02E+00	7.84E+00
+Sample3	6.87E+01	1.30E+01	6.52E+01
+Sample4	1.56E+01	6.20E+00	1.60E+01
+Sample5	2.86E+01	6.97E+00	2.89E+01
+Sample6	8.92E+01	1.50E+01	8.61E+01
+Sample7	3.43E+01	7.19E+00	3.44E+01
+Sample8	2.87E+01	2.97E+01	3.00E+01
+Sample9	7.36E+01	1.04E+01	7.28E+01
