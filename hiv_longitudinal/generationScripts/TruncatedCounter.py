@@ -32,8 +32,8 @@ def generate_frequencies():
             if str(filename).endswith(".txt"):  # and str(filename).startswith(study):
                 with open(path + filename, 'r') as test_file:
                     print("opening file", filename)
-                    if patientnum >= 20:
-                        return
+                    # if patientnum >= 20:
+                    #     return
                     patientnum += 1
 
                     mutations = {}
@@ -57,7 +57,7 @@ def generate_frequencies():
                                 if test == "n" or ref == "n" or test == ref or not mutations.keys().__contains__(ref.upper() + ">" + test.upper()):
                                     continue
                                 # get context of test
-                                print("Mutation at nucleotide " + str(i) + " between: " + ref + " and: " + test)
+                                # print("Mutation at nucleotide " + str(i) + " between: " + ref + " and: " + test)
                                 context = ""
                                 if i - 1 < 0:
                                     context = "-" + ref + referenceSequence[i+1]
@@ -67,7 +67,7 @@ def generate_frequencies():
                                     # print("Found an ending mutation!")
                                 else:
                                     context = referenceSequence[i-1] + ref + referenceSequence[i+1]
-                                print("Context " + context.upper() + "of mutation at i = " + str(i))
+                                # print("Context " + context.upper() + "of mutation at i = " + str(i))
                                 mut = ref + ">" + test
                                 mut = mut.upper()
                                 context = context.upper()
@@ -116,7 +116,6 @@ def generate_frequencies():
                                             row += [0]
                                         csv_writer.writerow(row + [mutations[key][context]])
                     shutil.move(tempfile.name, filename)
-
 
 def randpicker(letter):
     randnum = random.randint(0, 12)
