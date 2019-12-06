@@ -11,11 +11,10 @@ import shutil
 
 def generate_frequencies():
     # -- = insert study reference
-    study = "67_"
-#     /Users/macbook/Desktop/Proj6/HIVMutationSignatures/hiv_longitudinal
-    referenceGenome = open('/home/asif/shefu_projects/HIVMutationSignatures/hiv_longitudinal/AlignedSequences/1142_21423_13_10_1986_A_1986_0__None.txt', 'r')
+    study = "968"
+    referenceGenome = open('/Users/macbook/Desktop/Proj6/HIVMutationSignatures/hiv_longitudinal/AlignedSequences/1142_21423_13_10_1986_A_1986_0__None.txt', 'r')
 
-    path = '/home/asif/shefu_projects/HIVMutationSignatures/hiv_longitudinal//AlignedSequences/'
+    path = '/Users/macbook/Desktop/Proj6/HIVMutationSignatures/hiv_longitudinal/AlignedSequences/'
     outputFile = open("MutationFrequencies2.csv", "w")
 
     # convert genome to single string
@@ -30,16 +29,11 @@ def generate_frequencies():
     for (dirpath, dirnames, filenames) in os.walk(path):
         patientnum = 0
         for filename in filenames:
-            if str(filename).endswith(".txt") and str(filename).startswith(study):
+            if str(filename).endswith(".txt"):  # and str(filename).startswith(study):
                 with open(path + filename, 'r') as test_file:
                     print("opening file", filename)
-<<<<<<< HEAD
                     # if patientnum >= 20:
                     #     return
-=======
-                    if patientnum >= 45:
-                        return
->>>>>>> 12518cb47836f2702b76b9f97ad8fc8a924c91ef
                     patientnum += 1
 
                     mutations = {}
