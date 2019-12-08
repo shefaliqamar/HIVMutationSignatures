@@ -15,7 +15,7 @@ def generate_frequencies():
     referenceGenome = open('/Users/macbook/Desktop/Proj6/HIVMutationSignatures/hiv_longitudinal/AlignedSequences/1142_21423_13_10_1986_A_1986_0__None.txt', 'r')
 
     path = '/Users/macbook/Desktop/Proj6/HIVMutationSignatures/hiv_longitudinal/AlignedSequences/'
-    outputFile = open("MutationFrequencies2.csv", "w")
+    outputFile = open("DNAStyleFrequencies.csv", "w")
 
     # convert genome to single string
     referenceSequence = ""
@@ -29,11 +29,11 @@ def generate_frequencies():
     for (dirpath, dirnames, filenames) in os.walk(path):
         patientnum = 0
         for filename in filenames:
-            if str(filename).endswith(".txt") and str(filename).startswith(study):
+            if str(filename).endswith(".txt"):  # and str(filename).startswith(study):
                 with open(path + filename, 'r') as test_file:
                     print("opening file", filename)
-                    # if patientnum >= 9:
-                    #     return
+                    if patientnum >= 100:
+                        return
                     patientnum += 1
 
                     mutations = {}
@@ -52,9 +52,15 @@ def generate_frequencies():
                     for i in range(len(testSequence)):
                             # find mutations in line
                             if testSequence[i] != referenceSequence[i] and testSequence[i] != "-" and referenceSequence[i] != "-":
-                                test = randpicker(testSequence[i])
-                                ref = randpicker(referenceSequence[i])
-                                if test == "n" or ref == "n" or test == ref or not mutations.keys().__contains__(ref.upper() + ">" + test.upper()):
+                                test = randpicker(testSequence[i]).upper()
+                                ref = randpicker(referenceSequence[i]).upper()
+                                if test == "N" or ref == "N" or test == ref:
+                                    continue
+                                if not mutations.keys().__contains__(ref + ">" + test):
+                                    # print("calling on: ref: " + ref + " and testt: "+ test)
+                                    ref = opposite(ref).upper()
+                                    test = opposite(test).upper()
+                                if not mutations.keys().__contains__(ref + ">" + test):
                                     continue
                                 # get context of test
                                 # print("Mutation at nucleotide " + str(i) + " between: " + ref + " and: " + test)
@@ -74,10 +80,10 @@ def generate_frequencies():
                                 if not mutations[mut].__contains__(context):
                                     continue
                                 else:
-                                    mutations[mut][context] = mutations[mut][context] + 2
+                                    mutations[mut][context] = mutations[mut][context] + 1
                 print("Mutations for file" + filename + " : " + str(mutations))
                 if firstPatient is True:
-                    with open("MutationFrequencies2.csv", "w") as f:
+                    with open("DNAStyleFrequencies.csv", "w") as f:
                         w = csv.writer(f)
                         w.writerow(["Mutation Type"] + ["Trinucleotide"] + ["Sample" + str(patientnum)])
                         for key in sorted(mutations.keys()):
@@ -86,7 +92,7 @@ def generate_frequencies():
                                 foundContexts.append([key, context])
                     firstPatient = False
                 else:  # move on to new column for next patient
-                    filename = "MutationFrequencies2.csv"
+                    filename = "DNAStyleFrequencies.csv"
                     print("Looking at patient number " + str(patientnum))
                     # now populate data
                     with open(filename) as csvFile:
@@ -216,6 +222,25 @@ def populateContexts(mutations):
                 if j % 4 == 3:
                     right = "T"
                 context = left + key[0] + right
-                mutations[key][context] = 1
+                mutations[key][context] = 0
+
+def opposite(char):
+    if char == "A":
+        return "T"
+    if char == "T":
+        return "A"
+    if char == "C":
+        return "G"
+    if char == "G":
+        return "C"
+    if char == ">":
+        return ">"
+    # return 0
+
+def compliment(string):
+    newstring = ""
+    for base in string:
+        newstring += opposite(base)
+    return newstring
 
 generate_frequencies()

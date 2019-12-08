@@ -17,6 +17,7 @@ def generate_frequencies():
     path = '/Users/macbook/Desktop/Proj6/HIVMutationSignatures/hiv_longitudinal/AlignedSequences/'
     outputFile = open("MutationFrequencies.csv", "w")
 
+    numMutations = 0
     # convert genome to single string
     referenceSequence = ""
     with referenceGenome as reference_file:
@@ -59,7 +60,8 @@ def generate_frequencies():
                                 if test == "n" or ref == "n" or test == ref:
                                     continue
                                 # get context of test
-                                print("Mutation at nucleotide " + str(i) + " between: " + ref + " and: " + test)
+                                # print("Mutation at nucleotide " + str(i) + " between: " + ref + " and: " + test)
+                                numMutations += 1
                                 context = ""
                                 if i - 1 < 0:
                                     context = "-" + ref + referenceSequence[i+1]
@@ -69,7 +71,7 @@ def generate_frequencies():
                                     # print("Found an ending mutation!")
                                 else:
                                     context = referenceSequence[i-1] + ref + referenceSequence[i+1]
-                                print("Context " + context.upper() + "of mutation at i = " + str(i))
+                                # print("Context " + context.upper() + "of mutation at i = " + str(i))
                                 mut = ref + ">" + test
                                 mut = mut.upper()
                                 context = context.upper()
@@ -118,6 +120,7 @@ def generate_frequencies():
                                             row += [0]
                                         csv_writer.writerow(row + [mutations[key][context]])
                     shutil.move(tempfile.name, filename)
+    print("Num mutations found: " + str(numMutations))
 
 
 def randpicker(letter):
