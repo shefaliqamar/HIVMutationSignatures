@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f1314e4-cf04-45ef-8a30-fee091e1a1f0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/hiv_longitudinal/generationScripts/DNAStyleMutCounter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hiv_longitudinal/generationScripts/MutationCounter.py" beforeDir="false" afterPath="$PROJECT_DIR$/hiv_longitudinal/generationScripts/MutationCounter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hiv_longitudinal/generationScripts/MutationFrequencies.csv" beforeDir="false" afterPath="$PROJECT_DIR$/hiv_longitudinal/generationScripts/MutationFrequencies.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hiv_longitudinal/generationScripts/MutationFrequencies2.csv" beforeDir="false" afterPath="$PROJECT_DIR$/hiv_longitudinal/generationScripts/MutationFrequencies2.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hiv_longitudinal/generationScripts/TruncatedCounter.py" beforeDir="false" afterPath="$PROJECT_DIR$/hiv_longitudinal/generationScripts/TruncatedCounter.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,7 +16,7 @@
         <entry file="file://$PROJECT_DIR$/hiv_longitudinal/generationScripts/MutationCounter.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="458">
-              <caret line="37" column="34" lean-forward="true" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
+              <caret line="37" column="34" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -32,8 +27,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hiv_longitudinal/generationScripts/TruncatedCounter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="580">
-              <caret line="88" column="57" lean-forward="true" selection-start-line="88" selection-start-column="57" selection-end-line="88" selection-end-column="57" />
+            <state relative-caret-position="371">
+              <caret line="218" column="43" selection-start-line="218" selection-start-column="43" selection-end-line="218" selection-end-column="43" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -113,7 +108,7 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1280" />
-    <option name="height" value="709" />
+    <option name="height" value="690" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -271,7 +266,7 @@
     <entry file="file://$PROJECT_DIR$/hiv_longitudinal/generationScripts/MutationCounter.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="458">
-          <caret line="37" column="34" lean-forward="true" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
+          <caret line="37" column="34" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
@@ -280,8 +275,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/hiv_longitudinal/generationScripts/TruncatedCounter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="88" column="57" lean-forward="true" selection-start-line="88" selection-start-column="57" selection-end-line="88" selection-end-column="57" />
+        <state relative-caret-position="371">
+          <caret line="218" column="43" selection-start-line="218" selection-start-column="43" selection-end-line="218" selection-end-column="43" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>

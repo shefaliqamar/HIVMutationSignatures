@@ -74,7 +74,7 @@ def generate_frequencies():
                                 if not mutations[mut].__contains__(context):
                                     continue
                                 else:
-                                    mutations[mut][context] = mutations[mut][context] + 2
+                                    mutations[mut][context] = mutations[mut][context] + 1
                 print("Mutations for file" + filename + " : " + str(mutations))
                 if firstPatient is True:
                     with open("MutationFrequencies2.csv", "w") as f:
@@ -216,6 +216,6 @@ def populateContexts(mutations):
                 if j % 4 == 3:
                     right = "T"
                 context = left + key[0] + right
-                mutations[key][context] = 1
+                mutations[key][context] = 0
 
 generate_frequencies()
