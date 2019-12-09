@@ -1,0 +1,10 @@
+Samples	Signature A
+Sample1	0.00E+00
+Sample2	0.00E+00
+Sample3	0.00E+00
+Sample4	0.00E+00
+Sample5	0.00E+00
+Sample6	0.00E+00
+Sample7	0.00E+00
+Sample8	0.00E+00
+Sample9	0.00E+00

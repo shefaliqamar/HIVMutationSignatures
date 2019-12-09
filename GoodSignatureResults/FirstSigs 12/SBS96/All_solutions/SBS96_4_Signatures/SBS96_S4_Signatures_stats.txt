@@ -1,0 +1,5 @@
+Signatures	Stability	Total Mutations
+Signature A	0.932	34053
+Signature B	0.94	33441
+Signature C	0.901	31276
+Signature D	0.982	14374

@@ -1,0 +1,10 @@
+Samples	Signature A
+Sample1	26983
+Sample2	3021
+Sample3	12512
+Sample4	5556
+Sample5	8814
+Sample6	16693
+Sample7	9476
+Sample8	13193
+Sample9	16896
