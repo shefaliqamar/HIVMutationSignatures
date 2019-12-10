@@ -32,8 +32,8 @@ def generate_frequencies():
             if str(filename).endswith(".txt") and str(filename).startswith(study):
                 with open(path + filename, 'r') as test_file:
                     print("opening file", filename)
-                    if patientnum >= 40:
-                        return
+                    # if patientnum >= 40:
+                    #     return
                     patientnum += 1
 
                     mutations = {}
@@ -49,6 +49,23 @@ def generate_frequencies():
                     testSequence = ""
                     for line in test_file.readlines():
                         testSequence += line.split("\n")[0]
+
+                    # patientStartIndex = 0
+                    # patientEndIndex = 0
+                    # index = 0
+                    # for i in range(len(testSequence)):
+                    #     if testSequence[i] != "-":
+                    #         patientStartIndex = i
+                    #         break
+                    #     index += 1
+                    # for i in range(index, len(testSequence)):
+                    #     if i == len(testSequence) - 1:
+                    #         patientEndIndex = len(testSequence)
+                    #         break
+                    #     if testSequence[i] == "-" or i == len(testSequence) - 1:
+                    #         patientEndIndex = index
+                    #         break
+
                     for i in range(len(testSequence)):
                             # find mutations in line
                             if testSequence[i] != referenceSequence[i] and testSequence[i] != "-" and referenceSequence[i] != "-":
@@ -74,7 +91,7 @@ def generate_frequencies():
                                 if not mutations[mut].__contains__(context):
                                     continue
                                 else:
-                                    mutations[mut][context] = mutations[mut][context] + 1
+                                    mutations[mut][context] = mutations[mut][context] + 20
                 print("Mutations for file" + filename + " : " + str(mutations))
                 if firstPatient is True:
                     with open("MutationFrequencies2.csv", "w") as f:
@@ -216,6 +233,6 @@ def populateContexts(mutations):
                 if j % 4 == 3:
                     right = "T"
                 context = left + key[0] + right
-                mutations[key][context] = 0
+                mutations[key][context] = 1
 
 generate_frequencies()
