@@ -6,6 +6,8 @@ from tempfile import NamedTemporaryFile
 import shutil
 
 
+LAPLACE_K = 0.3
+
 # Used to generate frequency CSVs based on reference-based comparisons!!
 # Used same reference for all studies -- may want to split by study for git file cap
 
@@ -29,7 +31,7 @@ def generate_frequencies():
     for (dirpath, dirnames, filenames) in os.walk(path):
         patientnum = 0
         for filename in filenames:
-            if str(filename).endswith(".txt") and str(filename).startswith(study):
+            if str(filename).endswith(".txt"):  # and str(filename).startswith(study):
                 with open(path + filename, 'r') as test_file:
                     print("opening file", filename)
                     # if patientnum >= 40:
@@ -91,8 +93,10 @@ def generate_frequencies():
                                 if not mutations[mut].__contains__(context):
                                     continue
                                 else:
-                                    mutations[mut][context] = mutations[mut][context] + 20
+                                    mutations[mut][context] = mutations[mut][context] + 1
                 print("Mutations for file" + filename + " : " + str(mutations))
+                print("Laplace smoothed mutations for file " + filename + " : " + str(laplace_smoothing(mutations, LAPLACE_K)))
+                mutations = laplace_smoothing(mutations, 1)
                 if firstPatient is True:
                     with open("MutationFrequencies2.csv", "w") as f:
                         w = csv.writer(f)
@@ -133,6 +137,7 @@ def generate_frequencies():
                                             row += [0]
                                         csv_writer.writerow(row + [mutations[key][context]])
                     shutil.move(tempfile.name, filename)
+
 
 def randpicker(letter):
     randnum = random.randint(0, 12)
@@ -233,6 +238,32 @@ def populateContexts(mutations):
                 if j % 4 == 3:
                     right = "T"
                 context = left + key[0] + right
-                mutations[key][context] = 1
+                mutations[key][context] = 0
+
+
+def laplace_smoothing(mutations, k):
+    # find # total mutations
+    num_total_mutations = 0
+    for key in mutations.keys():
+        for context in mutations[key].keys():
+            num_total_mutations += mutations[key][context]
+    print("got here")
+    # generate laplace values
+    laplaceTable = {}
+    for key in mutations.keys():
+        laplaceTable[key] = {}
+        print("Assigning key : " + key)
+
+    for key in mutations.keys():
+        for context in mutations[key].keys():
+            laplaceTable[key][context] = round(laplace(mutations[key][context], 96, num_total_mutations, k) * 1000)
+    return laplaceTable
+
+
+def laplace(count_x, magnitude_X, N, k):
+    return (count_x + k) / (N + k * magnitude_X)
+
+
+
 
 generate_frequencies()
