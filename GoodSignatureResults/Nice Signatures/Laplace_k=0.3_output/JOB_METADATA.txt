@@ -1,0 +1,59 @@
+THIS FILE CONTAINS THE METADATA ABOUT SYSTEM AND RUNTIME
+
+
+-------System Info-------
+Operating System Name: Linux
+Nodename: minkowski
+Release: 5.0.0-37-generic
+Version: #40~18.04.1-Ubuntu SMP Thu Nov 14 12:06:39 UTC 2019
+
+-------Python and Package Versions------- 
+Python Version: 3.7.4
+Sigproextractor Version: 0.0.5.77
+SigprofilerPlotting Version: 1.0.10
+SigprofilerMatrixGenerator Version: 1.0.22
+Pandas version: 0.25.1
+Numpy version: 1.17.2
+Scipy version: 1.3.1
+Scikit-learn version: 0.21.3
+Nimfa version: 1.4.0
+
+-------Vital Parameters Used for the execution -------
+input_type: csv
+inputdata: Laplace_k=0.3.csv
+startProcess: 1
+endProcess: 10
+totalIterations: 8
+cpu: -1
+hierarchy: False
+refgen: GRCh37
+genome_build: GRCh37
+mtype: ['default'] 
+init: nndsvdar
+
+-------Date and Time Data------- 
+Date and Clock time when the execution started: 2019-12-12 23:50:44.218766
+
+Signature extraction for SBS96 completed for 1 signatures for 0:00:05.471110! TimeStamp: 2019-12-12 23:50:49.829262
+
+Signature extraction for SBS96 completed for 2 signatures for 0:00:44.093173! TimeStamp: 2019-12-12 23:51:34.652790
+
+Signature extraction for SBS96 completed for 3 signatures for 0:01:13.005892! TimeStamp: 2019-12-12 23:52:48.720690
+
+Signature extraction for SBS96 completed for 4 signatures for 0:01:21.105764! TimeStamp: 2019-12-12 23:54:11.380394
+
+Signature extraction for SBS96 completed for 5 signatures for 0:01:46.290609! TimeStamp: 2019-12-12 23:55:59.617444
+
+Signature extraction for SBS96 completed for 6 signatures for 0:01:34.297787! TimeStamp: 2019-12-12 23:57:36.475761
+
+Signature extraction for SBS96 completed for 7 signatures for 0:01:54.478220! TimeStamp: 2019-12-12 23:59:33.850162
+
+Signature extraction for SBS96 completed for 8 signatures for 0:02:32.439639! TimeStamp: 2019-12-13 00:02:09.654858
+
+Signature extraction for SBS96 completed for 9 signatures for 0:02:22.971708! TimeStamp: 2019-12-13 00:04:36.389718
+
+Signature extraction for SBS96 completed for 10 signatures for 0:02:33.845179! TimeStamp: 2019-12-13 00:07:14.547234
+
+Date and Clock time when the execution ended: 2019-12-13 00:07:55.720583
+-------Job Status------- 
+Analysis of mutational signatures completed successfully! Total execution time: 0:17:11.501817. Results can be found in: [Laplace_k=0.3_output] folder
