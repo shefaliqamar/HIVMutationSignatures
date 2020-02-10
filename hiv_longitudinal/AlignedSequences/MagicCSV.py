@@ -55,9 +55,9 @@ def generate_frequencies(divisions, mod, patientmax):
                         testSequence = ""
                         for line in test_file.readlines():
                             testSequence += line.split("\n")[0]
-                        substr=testSequence[len(testSequence)*iterations/divisions:len(testSequence)*iterations/divisions+len(testSequence)/divisions]
-                        startIndex = len(testSequence)*iterations/divisions
-                        endIndex = len(testSequence)*(iterations+1)/divisions
+                        substr=testSequence[round(len(testSequence)*iterations/divisions):round(len(testSequence)*iterations/divisions+len(testSequence)/divisions)]
+                        startIndex = round(len(testSequence)*iterations/divisions)
+                        endIndex = round(len(testSequence)*(iterations+1)/divisions)
                         if "-" in substr:
                             continue
                         patientnum += 1
@@ -234,5 +234,5 @@ def populateContexts(mutations):
                 context = left + key[0] + right
                 mutations[key][context] = 0
 
-generate_frequencies(7,10,20)
+generate_frequencies(4,10,20)
 # To do
