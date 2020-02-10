@@ -234,5 +234,5 @@ def populateContexts(mutations):
                 context = left + key[0] + right
                 mutations[key][context] = 0
 
-generate_frequencies(4,10,20)
+generate_frequencies(4,10,1000)
 # To do
