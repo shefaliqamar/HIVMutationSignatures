@@ -45,10 +45,6 @@ def generate_frequencies(divisions, mod, patientmax):
                             #if patientnum >= 40:
                             #return This is a limitation to the number of
 
-                        
-                        
-                        
-                        
                         if patientnum%mod==0:
                             populateContexts(mutations)
 
@@ -65,7 +61,7 @@ def generate_frequencies(divisions, mod, patientmax):
                             continue
                         for i in range(startIndex, endIndex):
                                 # find mutations in line
-                                if testSequence[i] != referenceSequence[i]:# and testSequence[i] != "-" and referenceSequence[i] != "-":
+                                if testSequence[i] != referenceSequence[i]: # and testSequence[i] != "-" and referenceSequence[i] != "-":
                                     test = randpicker(testSequence[i])
                                     ref = randpicker(referenceSequence[i])
                                     if test == "n" or ref == "n" or test == ref or not mutations.keys().__contains__(ref.upper() + ">" + test.upper()):
